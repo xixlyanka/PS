@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Singularity</title>
+    
+    <!-- Подключение шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ИСПРАВЛЕНИЕ: ПОДКЛЮЧАЕМ И КОНФИГУРИРУЕМ TAILWIND ЧЕРЕЗ CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Включаем поддержку темной темы по классу .dark
+        theme: {
+          extend: {
+            colors: {
+              // Связываем имена цветов Tailwind (например, bg-bg-primary) с нашими CSS переменными
+              'bg-primary': 'var(--bg-primary)',
+              'bg-secondary': 'var(--bg-secondary)',
+              'bg-tertiary': 'var(--bg-tertiary)',
+              'text-primary': 'var(--text-primary)',
+              'text-secondary': 'var(--text-secondary)',
+              'border-primary': 'var(--border-primary)',
+              'accent': 'var(--accent)',
+              'accent-hover': 'var(--accent-hover)',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Встроенные стили для переменных темы и скроллбара -->
+    <style>
+      :root {
+        --bg-primary: #f8f8f8;
+        --bg-secondary: #e4e4e7;
+        --bg-tertiary: #d4d4d8;
+        --text-primary: #18181b;
+        --text-secondary: #52525b;
+        --border-primary: #a1a1aa;
+        --accent: #3f3f46;
+        --accent-hover: #18181b;
+      }
+
+      .dark {
+        --bg-primary: #18181b;
+        --bg-secondary: #27272a;
+        --bg-tertiary: #3f3f46;
+        --text-primary: #f8f8f8;
+        --text-secondary: #a1a1aa;
+        --border-primary: #52525b;
+        --accent: #d4d4d8;
+        --accent-hover: #f8f8f8;
+      }
+
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        overflow: hidden;
+      }
+      
+      .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      .scrollbar-thin::-webkit-scrollbar-track {
+        background: var(--bg-secondary);
+        border-radius: 3px;
+      }
+      .scrollbar-thin::-webkit-scrollbar-thumb {
+        background: var(--text-secondary);
+        border-radius: 3px;
+      }
+      .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+        background: var(--accent);
+      }
+    </style>
+
+    <!-- Ссылка на index.css больше не нужна, так как мы используем CDN -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Vite по-прежнему будет обрабатывать этот скрипт для запуска React -->
+    <script type="module" src="/App.tsx"></script>
+  </body>
+</html>

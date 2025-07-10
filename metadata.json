@@ -1,0 +1,6 @@
+{
+  "name": "Project Singularity",
+  "description": "A comprehensive, highly detailed AI agent application designed for complex tasks in cybersecurity, server management, network transaction analysis, and hardware interaction. The application functions entirely locally on a MacBook with an M-series chip, utilizing locally downloaded Ollama models for all AI-driven operations. It features a sophisticated, intuitive user interface with advanced visualization, integrated development tools, and robust security controls.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
